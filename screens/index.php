@@ -8,7 +8,16 @@
 </head>
 <body>
     <?php
+
+        session_start();
+        
         if(isset($_POST['shareRadio'])){
+            //define session Variables
+            $_SESSION['requiredAmount']=$_POST['requiredAmount'];
+            $_SESSION['interestValue']=$_POST['interestValue'];
+            $_SESSION['requiredReason']=$_POST['requiredReason'];
+            $_SESSION['shareRadio']=$_POST['shareRadio'];
+
             if($_POST['shareRadio']==='YES'){
                 $actionValue='addCustomer.php';
                 $checkedFlag=true;
